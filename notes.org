@@ -26,6 +26,7 @@ So what this thing does is:
 - What if the schemas are different? Do we tolerate this?
 - What if data from one mixture conflict with another? Do we tolerate
   this?
+- How the crap are we going to TEST this?
 
 * Design
 - Master database that contains database names and mixture
@@ -34,7 +35,8 @@ So what this thing does is:
 - Each dataset goes into a new *database*. Probably with a prefix like
   mix_ or something? So if you do a show databases on the server with
   the mixtures on it, you might see mix_alex, mix_big_data, mix_foo,
-  etc.
+  etc. (Better: mix_proj_?) So for the crimereports project, the
+  databases might begin with mix_cr_ etc.
 
 * Coolifs
 - subtractive datasets? (Cool to write, but... would you ever use it?)

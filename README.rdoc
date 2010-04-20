@@ -1,0 +1,20 @@
+= Overview
+
+Mixtures is yet another fixture thingy, sorta, but meant for large,
+composite, sample data sets. You define chunks of sample data, put
+them into SQL databases, and when the time comes to build sample data,
+these database are mixed together.
+
+1. Everything is done in SQL. No more defining objects in code.
+
+2. Not (necessarily?) intended as a test fixture replacement. Building
+   a mixture involves choosing multiple datasets and the order in
+   which they will be applied.
+
+So what this thing does is:
+
+- Sets up sample data sets in SQL.
+- This lets us have potentially very large "fixtures"
+- This lets us modify the fixtures using SQL
+- This lets us run schema migrations on our fixtures
+

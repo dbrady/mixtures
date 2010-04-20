@@ -38,5 +38,15 @@ So what this thing does is:
   etc. (Better: mix_proj_?) So for the crimereports project, the
   databases might begin with mix_cr_ etc.
 
+- WHAT IF... EWWW... GIGGLE... BUT EWW... WHAT IF: We stored the
+  datasets as BLOBS in a single database? This wolud let us version
+  the blobs--ahh, but it wouldn't let us easily modify the blobs with
+  sql statements. Barf.
+
 * Coolifs
 - subtractive datasets? (Cool to write, but... would you ever use it?)
+- versioned datasets. (Could probably do it with mysql dumps.) You
+  would need to "check out" the blob by placing it in a live dataset
+  before working with it.
+
+

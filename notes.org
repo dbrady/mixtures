@@ -1,0 +1,40 @@
+Project Without An Interesting Name
+----------------------------------------------------------------------
+
+Mixtures
+
+* Overview
+Mixtures is yet another fixture thingy, sorta, but meant for large,
+composite, sample data sets. You define chunks of sample data, put
+them into SQL databases, and when the time comes to build sample data,
+these database are mixed together.
+
+1. Everything is done in SQL. No more defining objects in code.
+
+2. Not (necessarily?) intended as a test fixture replacement. Building
+   a mixture involves choosing multiple datasets and the order in
+   which they will be applied.
+
+So what this thing does is:
+
+- Sets up sample data sets in SQL.
+- This lets us have potentially very large "fixtures"
+- This lets us modify the fixtures using SQL
+- This lets us run schema migrations on our fixtures
+
+* Potential Issues
+- What if the schemas are different? Do we tolerate this?
+- What if data from one mixture conflict with another? Do we tolerate
+  this?
+
+* Design
+- Master database that contains database names and mixture
+  definitions.
+
+- Each dataset goes into a new *database*. Probably with a prefix like
+  mix_ or something? So if you do a show databases on the server with
+  the mixtures on it, you might see mix_alex, mix_big_data, mix_foo,
+  etc.
+
+* Coolifs
+- subtractive datasets? (Cool to write, but... would you ever use it?)
